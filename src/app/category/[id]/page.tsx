@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import CategoryPageClient from './CategoryPageClient';
 import equipmentData from '@/data/equipment.json';
 
-type Props = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+interface PageProps {
+  params: { id: string };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const category = equipmentData.categories.find(cat => cat.id === params.id);
   return {
     title: `${category?.name || 'Category'} Equipment - Gym Z`,
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function CategoryPage({ params, searchParams }: Props) {
+export default function CategoryPage({ params }: PageProps) {
   // Find category name and equipment data
   const category = equipmentData.categories.find(cat => cat.id === params.id);
   const categoryName = category ? category.name : 'Category';
