@@ -3,18 +3,7 @@
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import ProductGrid from '@/components/ProductGrid';
-
-interface Equipment {
-  id: string;
-  name: string;
-  image: string;
-  monthlyPrice: number;
-  originalPrice: number;
-  discount: number;
-  deliveryTime: string;
-  isNew?: boolean;
-  categoryId: string;
-}
+import type { Equipment } from '@/types/equipment';
 
 interface CategoryPageClientProps {
   categoryName: string;
