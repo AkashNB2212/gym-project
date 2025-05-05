@@ -58,7 +58,7 @@ const Header = () => {
           <div className="flex-1 flex justify-start md:justify-center">
             <Link href="/" className="flex items-center">
               <Image 
-                src="/logo.svg" 
+                src="/images/logo123.PNG" 
                 alt="Gym Z" 
                 width={120} 
                 height={40} 
