@@ -6,7 +6,14 @@ import { ChevronLeft } from 'lucide-react';
 import ProductGrid from '@/components/ProductGrid';
 import equipmentData from '@/data/equipment.json';
 
-export default function CategoryPage({ params }: { params: { id: string } }) {
+interface CategoryPageProps {
+  params: {
+    id: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default function CategoryPage({ params }: CategoryPageProps) {
   const [categoryName, setCategoryName] = useState('');
   
   useEffect(() => {
